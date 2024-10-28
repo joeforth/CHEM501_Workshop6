@@ -1,0 +1,53 @@
+{
+  "InChI-Key": {
+    "pref_name": "Compound Name",
+    "inchi_key": "InChI-Key",
+    "synonyms": [
+      {
+        "synonym": "Synonym1",
+        "source": "Source of Synonym1",
+        "type": "Synonym Type"
+      },
+      {
+        "synonym": "Synonym2",
+        "source": "Source of Synonym2",
+        "type": "Synonym Type"
+      }
+    ],
+    "structure": "Compound Structure",
+    "properties": {
+      "molecular_weight": "Molecular Weight",
+      "formula": "Chemical Formula",
+      "smiles": "SMILES Notation",
+      "inchi": "InChI Notation",
+      "logP": "number",
+      "solubility": "number",
+      "pKa": "number",
+      "tpsa": "number",
+      "h_bond_donors": "number",
+      "h_bond_acceptors": "number",
+      "rotatable_bonds": "number"
+    },
+    "targets": [
+      {
+        "target_name": "Target Name (e.g. Kinase Name)",
+        "uniprot_accession": "UniProt Accession ID",
+        "enzyme_family": "Enzyme Family",
+        "activity_type": "Activity Type (e.g. IC50, binding affinity, etc)",
+        "activity_value": "Activity Value",
+        "unit": "Unit of Activity",
+        "source": "Source of the activity, e.g. ChEMBL",
+        "source_id": "identifier for the activity, e.g. paper DOI, or ChEMBL ID"
+      }
+    ],
+    "references": [
+        {
+            "title": "string",
+            "authors": "string",
+            "journal": "string",
+            "year": "number",
+            "doi": "string"
+        }
+    ]
+  }
+}
