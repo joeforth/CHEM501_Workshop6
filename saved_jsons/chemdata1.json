@@ -1,0 +1,17 @@
+{
+    "Molecule1": {
+        "CompoundName": "Betamethasone",
+        "MolecularFormula": "C22H29FO5",
+        "inchikey": "UREBDLICKHMUKA-DVTGEIKXSA-N",
+        "synonyms": [
+            {
+                "synonym": "Betatrex",
+                "source": "ChEMBL"
+            },
+            {
+                "synonym": "Celestone",
+                "source": "ChEMBL"
+            }
+        ]
+    }
+}
