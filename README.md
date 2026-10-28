@@ -4,7 +4,11 @@ In this workshop we'll explore using Git and GitHub to share code and document y
 
 ## Setup
 ### Required Software
-Install [Git](https://git-scm.com/install) - you can find it [here](https://git-scm.com/install). If you're using a Mac, the easiest way of doing this is running the following command in a Terminal:
+Install [Git](https://git-scm.com/install) - you can find it [here](https://git-scm.com/install). 
+
+If you're using Windows, there's a nice installer that you just double-click.
+
+If you're using a Mac, the easiest way of doing this is running the following command in a Terminal:
 ```
 xcode-select --install
 ```
