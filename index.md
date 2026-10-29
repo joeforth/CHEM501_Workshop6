@@ -29,13 +29,13 @@ git config --global init.defaultBranch main
 ## Part 1 — Five ideas you need (10 min)
 Git is a lab notebook for code: every commit is a dated, signed entry you can always return to; GitHub is the shared copy of that notebook online.
 
-1. **Repository (repo):** a project folder that git is tracking. The history lives in a hidden `.git` folder inside it.
-2. **Working → staged → committed:** you edit files (working), choose which changes go into the next entry (staged), then record them with a message (commit). `git status` shows which files are in each state.
-3. **Commit:** Changes to the code that you're adding, plus a message saying *why*. Make small, frequent commits rather than one giant commit the night before the deadline. You're assessed on your commit record - both as evidence of incremental improvement and of teamwork.
-4. **Remote:** the copy on GitHub, called `origin`. **Push** sends your commits up. **Pull** brings others' (or your other laptop's) commits down.
-5. **Branch:** a parallel line of work. `main` is the version that works; try risky changes on a separate branch.
+1. **Repository (repo):** a project folder that git is tracking. The history lives in a hidden `.git` folder inside it. *Commands:* `git init` turns the current folder into a repo; `git clone <url>` copies an existing one from GitHub.
+2. **Working → staged → committed:** you edit files (working), choose which changes go into the next entry (staged), then record them with a message (commit). *Commands:* `git add <file>` stages a change; `git status` shows which files are in each state; `git diff` shows unstaged edits line by line, and `git diff --staged` shows what will go into the next commit.
+3. **Commit:** Changes to the code that you're adding, plus a message saying *why*. Make small, frequent commits rather than one giant commit the night before the deadline. You're assessed on your commit record - both as evidence of incremental improvement and of teamwork. *Commands:* `git commit -m "message"` records everything staged; `git log --oneline` lists your commits.
+4. **Remote:** the copy on GitHub, called `origin`. **Push** sends your commits up. **Pull** brings others' (or your other laptop's) commits down. *Commands:* `git remote add origin <url>` connects a repo to GitHub (once); `git push` and `git pull` do the sending and fetching.
+5. **Branch:** a parallel line of work. `main` is the version that works; try risky changes on a separate branch. *Commands:* `git switch -c <name>` creates a branch and moves onto it; `git switch main` goes back; `git merge <name>` brings a finished branch into the one you're on.
 
-The flow you should be repeating during your whole project: **edit → stage → commit → push**.
+The flow you should be repeating during your whole project: **edit → stage → commit → push**, or in commands: edit your files → `git add` → `git commit` → `git push`.
 
 ## Part 2 — Put your project on GitHub (20 min)
 
