@@ -16,9 +16,8 @@ Special emphasis is place on getting used to running Git in the command line / t
 
 **How the workshop runs.** Every task is done with git commands typed into a terminal. The VS Code integrated terminal (opened with Ctrl+\` / Cmd+\`) is the most convenient, but any terminal works.
 
-## Part 0 — Setup (15 min)
-
-Everyone needs git installed, a GitHub account, and a way for git to authenticate with GitHub before anything else works. You've hopefully done this already as part of Workshop 0, but if you haven't, the instructions are below. If something goes wrong, see the [Appendix](#appendix--setup-and-terminal-problems).
+## Part 0 — Setup
+Everyone needs git installed, a GitHub account, and a way for git to authenticate with GitHub before anything else works. You've probably done this already as part of Workshop 0, but if you haven't, the instructions are below. If something goes wrong, see the [Appendix](#appendix--setup-and-terminal-problems).
 
 1. **Install git.** Windows: [git-scm.com](https://git-scm.com/downloads), accept the defaults (this installs Git Bash and Git Credential Manager). macOS: run `git --version` in a terminal and accept the Xcode tools prompt. If VS Code was open while you installed git, quit it completely and reopen it.
 1. **Open VS Code and open a terminal.** Use *File → Open Folder* to open your project folder, then *Terminal → New Terminal*.
@@ -27,8 +26,8 @@ Everyone needs git installed, a GitHub account, and a way for git to authenticat
     - Check that `git --version` prints a version number.
 1. **Tell git who you are** (once per computer). Use the same email as your GitHub account. The last line makes git open VS Code, rather than Vim, when it needs you to write a message:
 ```bash
-git config --global user.name "Ada Lovelace"
-git config --global user.email "ada@liverpool.ac.uk"
+git config --global user.name "Joe Forth"
+git config --global user.email "j.forth@liverpool.ac.uk"
 git config --global init.defaultBranch main
 git config --global core.editor "code --wait"
 ```
@@ -37,7 +36,7 @@ git config --global core.editor "code --wait"
 
 **Checkpoint:** `git --version` works in the VS Code terminal, `git config --global --list` shows your name and email, and the Accounts icon shows your GitHub username.
 
-## Part 1 — Five ideas you need (10 min)
+## Part 1 — Five ideas you need
 Git is a lab notebook for code: every commit is a dated, signed entry you can always return to; GitHub is the shared copy of that notebook online.
 
 1. **Repository (repo):** a project folder that git is tracking. The history lives in a hidden `.git` folder inside it. *Commands:* `git init` turns the current folder into a repo; `git clone <url>` copies an existing one from GitHub.
@@ -48,19 +47,23 @@ Git is a lab notebook for code: every commit is a dated, signed entry you can al
 
 The flow you should be repeating during your whole project: **edit → stage → commit → push**, or in commands: edit your files → `git add` → `git commit` → `git push`.
 
-## Part 2 — Put your project on GitHub (20 min)
+## Part 2 — Building Your First GitHub Repo via Git (20 min)
+Let's build a simple, minimal GitHub repo to get you used to using git and the command line.
 
-You will turn your existing sketch folder into a repo and publish it as a **private** GitHub repository.
+**Task 2.1 - Create a folder for your code.** 
+Create a folder somewhere convenient - I created a folder called Workshop_6 on my Desktop, but it can be anywhere you can easily locate. Note down the directory - on my Mac, this would be `~/Desktop/Workshop_6` or `/Users/joeforth/Desktop/Workshop_6`.
 
-**Task 2.1 — Set up the folder.** Open a terminal in your project folder: in VS Code use *File → Open Folder* and the integrated terminal will start there, or `cd` into the folder from any terminal. Check with `pwd`.
+**Task 2.2 — Open the folder in VS Code.** 
+Open a terminal in your project folder: in VS Code use *File → Open Folder* and the integrated terminal will start there. Check the Appendix below for common problems that you might have to debug. In your own time - look up how to `cd` into a folder from any terminal. 
 
 **Task 2.2 — Initialise and publish.**
+Now it's time to create our repo inside our folder. You don't need to add any code to do this, just follow the steps below using the Terminal in VS Code.
 
 | Step | Command |
 | --- | --- |
 | Start tracking | `git init` |
 | Stage everything | `git add .` |
-| First commit | `git commit -m "Initial commit: WiFi sensor sketch"` |
+| First commit | `git commit -m "First commit"` |
 | Create GitHub repo and push | Create an empty private repo on github.com (no README), then `git remote add origin https://github.com/<user>/<repo>.git` and `git push -u origin main` |
 
 **Checkpoint:** refresh your repo page on github.com and see your sketch and `.gitignore`.
