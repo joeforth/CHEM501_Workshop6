@@ -12,7 +12,7 @@
 ## Overview
 In this Workshop, you'll create a GitHub repo that will host the code and documentation for your project. This is both a key part of making your work FAIR and 50% of your final grade. You'll start by *each* creating a GitHub repo and adding the basic components to get used to using git. You'll then work in your groups to create a GitHub repo for your project - each group should use and submit a single repo for their projects, and your repos will be assessed as a group.
 
-Here we'll place special emphasis on getting used to running git in the command line / terminal in VS Code. As with other Workshops, the hard bit is getting things setup - using the actual tools is the easy bit!
+Here we'll place special emphasis on getting used to running git in the command line / terminal in VS Code. This is both because it's useful and because John and Gabriella will rightly push you to use it in CHEM504 next semester. As with other Workshops, the hard bit is getting things set up - using the actual tools is the easy bit!
 
 **How the workshop runs.** Every task is done with git commands typed into a terminal. The VS Code integrated terminal (opened with Ctrl+\` / Cmd+\`) is the most convenient, but any terminal works.
 
@@ -61,6 +61,7 @@ Now it's time to create our repo inside our folder. You don't need to add any co
 | Step | Command |
 | --- | --- |
 | Start tracking | `git init` |
+| Add a file | Every GitHub repo needs a README file - create a new file in your folder and call it `README.md`. Add some text to the file and save it. \
 | Stage everything | `git add .` |
 | First commit | `git commit -m "First commit"` |
 | Create GitHub repo and push | Create an empty private repo on github.com (no README), then `git remote add origin https://github.com/<user>/<repo>.git` (for this example, I used `git remote add origin https://github.com/joeforth/minimal_repo.git`) and then run `git push -u origin main` |
