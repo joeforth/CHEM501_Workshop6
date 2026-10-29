@@ -1,8 +1,7 @@
 # Workshop 6 - Git, GitHub, and FAIR Practice
 ## Using Git from the Command Line
 
-|  |  |
-| --- | --- 
+| --- | --- |
 | Bring | Laptop, MKR, Nicla|
 | Output | A project repo URL submitted on Canvas, containing code, README, and a history of commits |
 
