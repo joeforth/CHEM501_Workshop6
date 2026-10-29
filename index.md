@@ -1,4 +1,5 @@
 # Workshop 6 - Git, GitHub, and FAIR Practice
+
 ## Using Git from the Command Line
 
 | --- | --- |
@@ -9,51 +10,50 @@
 
 
 ## Overview
-In this Workshop, you'll create a GitHub repo for your projects. You'll start by *each* creating a GitHub repo and adding the basic components to get used to using Git. You'll then work in your groups to create a GitHub repo for your project - each group should use a single repo for their projects, and your repos will be assessed as a group.
+In this Workshop, you'll create a GitHub repo that will host the code and documentation for your project. This is both a key part of making your work FAIR and 50% of your final grade. You'll start by *each* creating a GitHub repo and adding the basic components to get used to using git. You'll then work in your groups to create a GitHub repo for your project - each group should use and submit a single repo for their projects, and your repos will be assessed as a group.
 
-Special emphasis is place on getting used to running Git in the command line / terminal in VS Code. As with other Workshops, the hard bit is getting things setup - using the actual tools is the easy bit!
+Here we'll place special emphasis on getting used to running git in the command line / terminal in VS Code. As with other Workshops, the hard bit is getting things setup - using the actual tools is the easy bit!
 
 **How the workshop runs.** Every task is done with git commands typed into a terminal. The VS Code integrated terminal (opened with Ctrl+\` / Cmd+\`) is the most convenient, but any terminal works.
 
 ## Part 0 — Setup
 Everyone needs git installed, a GitHub account, and a way for git to authenticate with GitHub before anything else works. You've probably done this already as part of Workshop 0, but if you haven't, the instructions are below. If something goes wrong, see the [Appendix](#appendix--setup-and-terminal-problems).
 
+1.**Create a folder for your code.** 
+Create a folder somewhere convenient - I created a folder called Workshop_6 on my Desktop, but it can be anywhere you can easily locate. Note down the directory - on my Mac, this would be `~/Desktop/Workshop_6` or `/Users/joeforth/Desktop/Workshop_6`.
 1. **Install git.** Windows: [git-scm.com](https://git-scm.com/downloads), accept the defaults (this installs Git Bash and Git Credential Manager). macOS: run `git --version` in a terminal and accept the Xcode tools prompt. If VS Code was open while you installed git, quit it completely and reopen it.
-1. **Open VS Code and open a terminal.** Use *File → Open Folder* to open your project folder, then *Terminal → New Terminal*.
+1. **Open VS Code and open a terminal.** Use *File → Open Folder* to open the folder that you just created, then *Terminal → New Terminal*.
     - **Windows:** Command Palette (Ctrl+Shift+P) → *Terminal: Select Default Profile* → **Git Bash**, then open a new terminal. This gives you the same commands as the Mac instructions; avoid *Command Prompt* (cmd).
     - **macOS:** Command Palette (Cmd+Shift+P) → *Shell Command: Install 'code' command in PATH*.
-    - Check that `git --version` prints a version number.
-1. **Tell git who you are** (once per computer). Use the same email as your GitHub account. The last line makes git open VS Code, rather than Vim, when it needs you to write a message:
+    - Run `git --version` in your terminal and check it prints a version number.
+1. **Tell git who you are** (once per computer). Use the same email as you use with your GitHub account. The last line is useful but not essential - look up what it does.
 ```bash
 git config --global user.name "Joe Forth"
 git config --global user.email "j.forth@liverpool.ac.uk"
 git config --global init.defaultBranch main
 git config --global core.editor "code --wait"
 ```
-1. **Sign VS Code in to GitHub.** Click the Accounts icon (person, bottom-left) → *Sign in with GitHub* → approve in the browser. GitHub doesn't accept passwords over the command line; once VS Code is signed in, `git push` from the VS Code terminal uses that login instead.
+1. **Sign VS Code in to GitHub.** Click the Accounts icon (person, bottom-left) → *Sign in with GitHub* → approve in the browser.
 1. **Keep projects out of synced folders.** OneDrive (often your Windows Desktop and Documents) and iCloud Drive clash with git. Use a folder such as `C:\Users\<you>\code` or `~/code`.
 
-**Checkpoint:** `git --version` works in the VS Code terminal, `git config --global --list` shows your name and email, and the Accounts icon shows your GitHub username.
+**Checkpoint:** Check that running `git --version` works in the VS Code terminal, that `git config --global --list` shows your name and email, and that clicking on the Accounts icon in VS Code shows your GitHub username.
 
 ## Part 1 — Five ideas you need
-Git is a lab notebook for code: every commit is a dated, signed entry you can always return to; GitHub is the shared copy of that notebook online.
+Git is a lab notebook for code: every commit is a dated, signed entry you can always return to; GitHub is the shared copy of that notebook online. Key bits of jargon:
 
-1. **Repository (repo):** a project folder that git is tracking. The history lives in a hidden `.git` folder inside it. *Commands:* `git init` turns the current folder into a repo; `git clone <url>` copies an existing one from GitHub.
-2. **Working → staged → committed:** you edit files (working), choose which changes go into the next entry (staged), then record them with a message (commit). *Commands:* `git add <file>` stages a change; `git status` shows which files are in each state; `git diff` shows unstaged edits line by line, and `git diff --staged` shows what will go into the next commit.
-3. **Commit:** Changes to the code that you're adding, plus a message saying *why*. Make small, frequent commits rather than one giant commit the night before the deadline. You're assessed on your commit record - both as evidence of incremental improvement and of teamwork. *Commands:* `git commit -m "message"` records everything staged; `git log --oneline` lists your commits.
-4. **Remote:** the copy on GitHub, called `origin`. **Push** sends your commits up. **Pull** brings others' (or your other laptop's) commits down. *Commands:* `git remote add origin <url>` connects a repo to GitHub (once); `git push` and `git pull` do the sending and fetching.
-5. **Branch:** a parallel line of work. `main` is the version that works; try risky changes on a separate branch. *Commands:* `git switch -c <name>` creates a branch and moves onto it; `git switch main` goes back; `git merge <name>` brings a finished branch into the one you're on.
+1. **Repository (repo):** a project folder that git is tracking. The history lives in a hidden `.git` folder inside that folder. *Commands:* `git init` turns the current folder into a repo; `git clone <url>` copies an existing repo from the internet.
+1. **Working → staging → committing:** you edit files (working), choose which changes go into the next entry (staging), then record them with a message (commiting). *Commands:* `git add <file>` stages a change; `git status` shows which files are in each state; `git diff` shows unstaged edits line by line, and `git diff --staged` shows what will go into the next commit.
+1. **Commit:** Changes to the code that you're adding, plus a message saying *why*. Make small, frequent commits rather than one giant commit the night before the deadline. You're assessed on your commit record - both as evidence of incremental improvement and of teamwork. *Commands:* `git commit -m "message"` records everything staged; `git log --oneline` lists your commits.
+1. **Remote:** the copy on GitHub, called `origin`. **Push** sends your commits up. **Pull** brings others' (or your other laptop's) commits down. *Commands:* `git remote add origin <url>` connects a repo to GitHub (once); `git push` and `git pull` do the sending and fetching.
+1. **Branch:** a parallel line of work. `main` is the version that works - you can create new versions ('branches') to try risky changes that might not work. *Commands:* `git switch -c <name>` creates a branch and moves onto it; `git switch main` goes back; `git merge <name>` brings a finished branch into the one you're on.
 
 The flow you should be repeating during your whole project: **edit → stage → commit → push**, or in commands: edit your files → `git add` → `git commit` → `git push`.
 
 ## Part 2 — Building Your First GitHub Repo via Git (20 min)
-Let's build a simple, minimal GitHub repo to get you used to using git and the command line.
+Let's build a minimal GitHub repo to get you used to using git and the command line.
 
-**Task 2.1 - Create a folder for your code.** 
-Create a folder somewhere convenient - I created a folder called Workshop_6 on my Desktop, but it can be anywhere you can easily locate. Note down the directory - on my Mac, this would be `~/Desktop/Workshop_6` or `/Users/joeforth/Desktop/Workshop_6`.
-
-**Task 2.2 — Open the folder in VS Code.** 
-Open a terminal in your project folder: in VS Code use *File → Open Folder* and the integrated terminal will start there. Check the Appendix below for common problems that you might have to debug. In your own time - look up how to `cd` into a folder from any terminal. 
+**Task 2.1 — Open your folder in VS Code.** 
+In VS Code use *File → Open Folder* and the integrated terminal will start there (you may to use *Terminal → New Terminal*). Check the Appendix below for common problems that you might have to debug. In your own time - look up how to `cd` into a folder from any terminal. 
 
 **Task 2.2 — Initialise and publish.**
 Now it's time to create our repo inside our folder. You don't need to add any code to do this, just follow the steps below using the Terminal in VS Code.
@@ -63,7 +63,7 @@ Now it's time to create our repo inside our folder. You don't need to add any co
 | Start tracking | `git init` |
 | Stage everything | `git add .` |
 | First commit | `git commit -m "First commit"` |
-| Create GitHub repo and push | Create an empty private repo on github.com (no README), then `git remote add origin https://github.com/<user>/<repo>.git` and `git push -u origin main` |
+| Create GitHub repo and push | Create an empty private repo on github.com (no README), then `git remote add origin https://github.com/<user>/<repo>.git` (for this example, I used `git remote add origin https://github.com/joeforth/minimal_repo.git`) and then run `git push -u origin main` |
 
 **Checkpoint:** refresh your repo page on github.com and see your sketch and `.gitignore`.
 
