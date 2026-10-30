@@ -8,7 +8,7 @@ char pass[] = "joeisgreat";    // your network password (use for WPA, or use as 
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
-const char broker[] = "test.mosquitto.org";
+const char broker[] = "pf-c0uudk9ksjw7kkm9chm5.cedalo.cloud";
 int        port     = 1883;
 const char topic1[] = "joetopic1";
 const char topic2[] = "joetopic2";
@@ -21,9 +21,6 @@ unsigned long previousMillis = 0;
 int count = 0;
 
 void setup() {
-//  //Initialize serial and wait for port to open:
- Serial.begin(9600);
-
   // attempt to connect to Wifi network:
   Serial.print("Attempting to connect to WPA SSID: ");
   Serial.println(ssid);
