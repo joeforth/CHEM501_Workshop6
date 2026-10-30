@@ -1,13 +1,13 @@
 # Workshop 6 - Git, GitHub, and FAIR Practice
 
 ## FAIR Practice
-FAIR is act of making your code and data Findable, Accessible, Interoperable, and Reusable. 
+FAIR is act of making your code and data Findable, Accessible, Interoperable, and Reusable. As a formal idea-with-a-name, it's been around for about a decade, with the main paper in the area being [Wilkinson et al.](https://www.nature.com/articles/sdata201618). The idea is that we should be making our code and data as FAIR as possible, while also respecting things like commercial sensitivity. Today, we'll start the process of making the code in your CHEM501 mini-projects FAIR by creating a GitHub repo (making it findable and accessible), writing a repo using Markdown (documenting it to make it interoperable, giving it a license to make it reusable), and managing the code in a repo with git. 
 
-In this Workshop, you'll create a GitHub repo that will host the code and documentation for your project. This is both a key part of making your work FAIR and 50% of your final grade. You'll start by *each* creating a GitHub repo and adding the basic components to get used to using git. You'll then work in your groups to create a GitHub repo for your project - each group should use and submit a single repo for their projects, and your repos will be assessed as a group.
+You'll start by *each* creating a GitHub repo and adding the basic components to get used to using git. You'll then work in your groups to create a GitHub repo for your project - each group should use and submit a single repo for their projects, and your repos will be assessed as a group. Your GitHub repo constitutes 50% of the grade for CHEM501.
 
-Here we'll place special emphasis on getting used to running git in the command line / terminal in VS Code. This is both because it's useful and because John and Gabriella will rightly push you to use it in CHEM504 next semester. As with other Workshops, the hard bit is getting things set up - using the actual tools is the easy bit!
+Here we'll place special emphasis on getting used to running git in the command line / terminal in VS Code. This is both because it's useful and because you will (rightly) be pushed to use it this way in CHEM504 next semester. As with other Workshops, the hard bit is getting things set up - using the actual tools is the easy bit!
 
-**How the workshop runs.** Every task is done with git commands typed into a terminal. The VS Code integrated terminal (opened with Ctrl+\` / Cmd+\`) is the most convenient, but any terminal works.
+**How the workshop runs.** Every task is done with git commands typed into a terminal. The VS Code integrated terminal (opened with Ctrl+\` / Cmd+\` or by clicking Terminal → New Terminal) is preferable, but any terminal works.
 
 ## Five Ideas You Need
 Git is a lab notebook for code: every commit is a dated, signed entry you can always return to; GitHub is the shared copy of that notebook online. Key bits of jargon:
@@ -45,15 +45,15 @@ Before using git on your own computer, you'll create the repo on GitHub with the
 In your browser, go to [github.com/new](https://github.com/new) and fill in:
 - **Repository name:** e.g. `chem501-git-practice`.
 - **Description:** one sentence saying what the repo is for.
-- **Visibility:** Private.
-- **Add README:** on. The README is the front page of your repo, explaining what it is and how to use it.
-- **Add .gitignore:** choose the **Python** template. This lists files git should never track (temporary and environment files); we'll add Arduino-specific lines in Part 5.
-- **Choose a license:** **MIT License**. Without a licence, nobody else is legally allowed to reuse your code, however public it is.
+- **Visibility:** Up to you - I'd suggest public (otherwise it's not Findable!)
+- **Add README:** On. The README is the front page of your repo, explaining what it is and how to use it.
+- **Add .gitignore:** choose the **Python** template. This lists files git should never track (temporary and environment files).
+- **Choose a license:** Again, up to you - the MIT License is a good catch-all option, but most of them are suitable.
 - Click **Create repository**.
 
 The description, README, and licence are the starting point of FAIR practice: the description makes your work *findable*, the README tells others what it is and how to use it, and the licence makes it legally *reusable*. Every repo you make, including your group project repo, should have all three from the start.
 
-**Checkpoint:** your new repo's page on GitHub shows `README.md`, `.gitignore` and `LICENSE`.
+**Checkpoint:** Check your new repo's page on GitHub shows `README.md`, `.gitignore`, and `LICENSE`.
 
 ## Part 3 — Clone your repo and make your first commit
 Now you'll copy your repo onto your computer and make your first change with git from the command line.
