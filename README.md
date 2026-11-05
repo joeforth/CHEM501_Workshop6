@@ -1,6 +1,8 @@
 # CHEM501 - Workshop 6
 ## Git, GitHub, and FAIR Data
-In this workshop we'll explore using Git and GitHub to share code and document your projects. We'll explore how to get our Nicla to send data over WiFi and you'll start planning your projects. 
+In this workshop we'll explore using Git and GitHub to share code and document your projects. We'll explore how to get our Nicla to send data over WiFi and you'll start planning your projects.
+
+There's a webpage to guide you through the GitHub-based aspects of it here, that you can find [here](https://joeforth.github.io/CHEM501_Workshop6/) or at https://joeforth.github.io/CHEM501_Workshop6/
 
 ## Setup
 ### Required Software

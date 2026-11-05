@@ -1,8 +1,8 @@
-#include <ArduinoMqttClient.h>
+
+#include "ArduinoMqttClient.h"
 #include "Arduino.h"
 #include "Arduino_BHY2Host.h"
-#include <WiFiNINA.h>
-
+#include "WiFiNINA.h"
 #include "arduino_secrets.h"
 
 ///////please enter your sensitive data in the Secret tab/arduino_secrets.h
@@ -12,7 +12,7 @@ char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as k
 WiFiClient wifiClient;
 MqttClient mqttClient(wifiClient);
 
-const char broker[] = "pf-c0uudk9ksjw7kkm9chm5.cedalo.cloud";
+const char broker[] = SECRET_SERVER;
 int        port     = 1883;
 const char topic1[] = "joetopic1";
 const char topic2[] = "joetopic2";

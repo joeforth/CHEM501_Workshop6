@@ -1,0 +1,12 @@
+# WiFi credentials — never commit
+arduino_secrets.h
+
+# OS and editor clutter
+.DS_Store
+Thumbs.db
+.vscode/c_cpp_properties.json
+
+# Python analysis
+__pycache__/
+.ipynb_checkpoints/
+.venv/
