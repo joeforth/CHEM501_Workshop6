@@ -24,18 +24,34 @@ unsigned long previousMillis = 0;
 int count = 0;
 
 void setup() {
+  //Initialize serial:
+  Serial.begin(9600);
+
   // attempt to connect to Wifi network:
   Serial.print("Attempting to connect to WPA SSID: ");
   Serial.println(ssid);
+  
   while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
     // failed, retry
+    Serial.print(".");
     delay(5000);
   }
 
+  Serial.println("You're connected to the network");
+  Serial.println();
+
+  Serial.print("Attempting to connect to the MQTT broker: ");
+  Serial.println(broker);
+
   if (!mqttClient.connect(broker, port)) {
+    Serial.print("MQTT connection failed! Error code = ");
+    Serial.println(mqttClient.connectError());
+
     while (1);
   }
 
+  Serial.println("You're connected to the MQTT broker!");
+  Serial.println();
 }
 
 void loop() {
